@@ -1,0 +1,16 @@
+{
+  "links": [
+    {
+      "label": "Counter",
+      "href": "/counter"
+    },
+    {
+      "label": "Todo-List",
+      "href": "/todo"
+    },
+    {
+      "label": "Modal",
+      "href": "/modal"
+    }
+  ]
+}
