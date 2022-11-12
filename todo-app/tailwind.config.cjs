@@ -1,8 +1,8 @@
 module.exports = {
-  purge: [
-    "./src/**/*.{js,jsx,ts,tsx,index.css}",
-    "./public/index.html",
-    "./src/index.css",
+  content: [
+    // Example content paths...
+    "./public/**/*.html",
+    "./src/**/*.{js,jsx,ts,tsx,vue}",
   ],
   theme: {
     extend: {},

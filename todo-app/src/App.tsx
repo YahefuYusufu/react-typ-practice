@@ -1,5 +1,5 @@
 import React from "react"
-import { AddToList } from "./components/AddToList"
+import AddToList from "./components/AddToList"
 import List from "./components/List"
 
 export interface IState {

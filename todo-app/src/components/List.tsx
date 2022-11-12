@@ -10,7 +10,7 @@ const List: React.FC<IProps> = ({ people }) => {
     <>
       {people.map((person) => {
         return (
-          <div className="w-full h-auto relative">
+          <div key={person.name} className="w-full h-auto relative">
             <div className="bg-slate-900 text-slate-100 mt-10 px-5 py-3.5 rounded-lg shadow hover:shadow-xl max-w-sm mx-auto transform hover:-translate-y-[0.125rem] transition duration-100 ease-linear">
               <div className="w-full flex items-center ml-80">
                 <button className="-mr-1 bg-slate-800 hover:bg-slate-700/70 text-slate-400 hover:text-slate-200 h-5 w-5 rounded-full flex justify-center items-center">
