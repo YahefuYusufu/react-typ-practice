@@ -62,17 +62,20 @@ const AddToList: React.FC<IProps> = ({ people, setPeople }) => {
             className="w-full bg-gray-100 rounded p-2 mr-4 border focus:outline-none focus:border-blue-500"
             name="age"
             placeholder="Age"
+            onChange={handleChange}
           />
           <input
             type="text"
             className="w-full bg-gray-100 rounded p-2 mr-4 border focus:outline-none focus:border-blue-500"
             name="img"
             placeholder="Image URL"
+            onChange={handleChange}
           />
           <textarea
             className="w-full bg-gray-100 rounded p-2 mr-4 border focus:outline-none focus:border-blue-500"
             name="note"
             placeholder="Note"
+            onChange={handleChange}
           />
           <button
             className="w-full p-4 cursor bg-blue-700 text-white rounded-2xl"
