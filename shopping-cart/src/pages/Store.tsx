@@ -6,7 +6,7 @@ const Store = () => {
   return (
     <>
       <h1 className="d-flex justify-content-center mt-3">Store</h1>
-      <Row md={2} xs={1} lg={3} className="g-3">
+      <Row xs={1} md={2} lg={3} className="g-3">
         {storeItems.map((item) => (
           <Col key={item.id}>
             <StoreItem {...item} />
