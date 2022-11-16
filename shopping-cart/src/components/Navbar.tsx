@@ -1,6 +1,8 @@
 import { Button, Container, Nav, Navbar as NavBarBs } from "react-bootstrap"
 import { NavLink } from "react-router-dom"
+import { useShopingCart } from "../context/ShoppingCartContext"
 const Navbar = () => {
+  const { cartQuantity } = useShopingCart()
   return (
     <>
       <NavBarBs
@@ -45,7 +47,7 @@ const Navbar = () => {
                 right: "-0.5rem",
               }}
             >
-              3
+              {cartQuantity}
             </div>
           </Button>
         </Container>
