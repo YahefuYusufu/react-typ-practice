@@ -76,9 +76,9 @@ const actions = bindActionCreators(
   store.dispatch
 )
 
-// store.dispatch(updateStreet("stenbockgatan 18_C"))
-// store.dispatch(updateCity("Komul"))
-// store.dispatch(updateState("Skane"))
+store.dispatch(updateStreet("stenbockgatan 18_C"))
+store.dispatch(updateCity("Komul"))
+store.dispatch(updateState("Skane"))
 
 actions.updateStreet("stenbockgatan 18C")
 actions.updateCity("Komul")
