@@ -1,10 +1,10 @@
-import { Hero } from "../../components/hero/Hero"
+import { Navbar } from "../../components/navbar/Navbar"
 
 export const Home = () => {
   return (
-    <Hero
-      heading="Multiple Project"
-      message="Here you can find some projects i have done."
-    />
+    <>
+      <Navbar />
+      <h1 className="flex justify-center align-center h-screen">Home</h1>
+    </>
   )
 }

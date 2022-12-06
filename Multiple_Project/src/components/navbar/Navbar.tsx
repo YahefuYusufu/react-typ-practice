@@ -27,30 +27,30 @@ export const Navbar = () => {
   return (
     <div
       style={{ backgroundColor: `${color}` }}
-      className="fixed left-0 top-0 w-full z-10 ease-in duration-300"
+      className="fixed left-0 top-0 bg-slate-500 rounded-xl w-full z-10 ease-in duration-300"
     >
-      <div className="max-w[1280px]  m-auto flex justify-between items-center p-4 text-white">
+      <div className="max-w[1280px]  m-auto flex justify-between items-center p-4 text-black">
         <Link to="/">
           <h1
             style={{ color: `${textColor}` }}
-            className="text-4xl font-bold font-extra-bold sm:text-5xl"
+            className="text-4xl font-bold font-extra-bold sm:text-5x  hover:scale-125 transition duration-300 ease-in-out"
           >
             PrG
           </h1>
         </Link>
-        <ul style={{ color: `${textColor}` }} className="hidden sm:flex">
-          <li className="p-4">
+        <ul style={{ color: `${textColor}` }} className="hidden sm:flex ">
+          <li className="p-4 hover:scale-125 transition duration-300 ease-in">
             <a href="/" aria-current="page">
               Home
             </a>
           </li>
-          <li className="p-4">
+          <li className="p-4 hover:scale-125 transition duration-300 ease-in">
             <a href="/conventer">Conventer</a>
           </li>
-          <li className="p-4">
+          <li className="p-4 hover:scale-125 transition duration-300 ease-in-out">
             <a href="/modal">Modal</a>
           </li>
-          <li className="p-4">
+          <li className="p-4 hover:scale-125 transition duration-300 ease-in-out">
             <a href="/gallary">Gallary</a>
           </li>
         </ul>
