@@ -44,3 +44,10 @@ body {
     @apply p-5;
   }
 }
+
+@layer utilities {
+  btn {
+    @apply p-6;
+  }
+  @variants;
+}
