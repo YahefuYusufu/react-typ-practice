@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+.btn {
+  @apply py-2 px-4 font-serif;
+}
+.btn-gray {
+  @apply rounded-lg shadow-md bg-indigo-400 hover:bg-indigo-500;
+}
+
+@layer components {
+  .btn-blue {
+    @apply py-2 px-4 font-serif rounded-lg shadow-md bg-blue-500 hover:bg-blue-700;
+  }
+}
+
+@layer utilities {
+  /* .p-21 {
+    padding: 5.5rem;
+  } */
+  @variants hover,focus {
+    .p-21 {
+      padding: 5.5rem;
+    }
+  }
+}
+
+@layer base {
+  btn {
+    @apply p-4;
+  }
+}
+
+@layer components {
+  btn {
+    @apply p-5;
+  }
+}
