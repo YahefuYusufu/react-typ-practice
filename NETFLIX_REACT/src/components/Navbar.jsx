@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 
 const style = {
   container: "flex justify-between items-center p-4 z-[100] w-full absolute",
@@ -9,10 +10,16 @@ const style = {
 export const Navbar = () => {
   return (
     <div className={style.container}>
-      <h1 className={style.header}>NETFKIX</h1>
+      <Link to="/">
+        <h1 className={style.header}>NETFKIX</h1>
+      </Link>
       <div>
-        <button className={style.signIn}>Sign In</button>
-        <button className={style.signUp}>Sign Up</button>
+        <Link to="/login">
+          <button className={style.signIn}>Sign In</button>
+        </Link>
+        <Link to="/signup">
+          <button className={style.signUp}>Sign Up</button>
+        </Link>
       </div>
     </div>
   )
