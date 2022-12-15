@@ -5,14 +5,13 @@ import requests from "../data/Requests"
 export const Main = () => {
   const [movies, setMovies] = React.useState([])
   const movie = movies[Math.floor(Math.random() * movies.length)]
-  const img = "https://image.tmdb.org/t/p/original"
 
   React.useEffect(() => {
     axios.get(requests.requestPopular).then((res) => {
       setMovies(res.data.results)
     })
   }, [])
-  console.log(movie)
+  // console.log(movie)
 
   const truncateString = (str, num) => {
     if (str?.length > num) {

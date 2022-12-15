@@ -1,7 +1,26 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import { UserAuth } from "../contenxt/authContext"
 
 export const Login = () => {
+  const [email, setEmail] = React.useState("")
+  const [password, setPassword] = React.useState("")
+  const [error, setError] = React.useState("")
+  const { user, logIn } = UserAuth()
+  const navigate = useNavigate()
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setError("")
+    try {
+      await logIn(email, password)
+      navigate("/")
+    } catch (error) {
+      console.log(error)
+      setError(error.message)
+    }
+  }
+
   return (
     <>
       <div className="w-full h-full">
@@ -15,9 +34,13 @@ export const Login = () => {
         <div className="fixed w-full py-24 z-50">
           <div className="max-w-[450px] h-[600px] mx-auto bg-black/75 text-white">
             <div className="max-w-[320px] m-auto py-16">
-              <h1 className="text-4xl font-bold text-center">Sign Up</h1>
-              <form className="w-full flex flex-col py-4">
+              <h1 className="text-4xl font-bold text-center">Sign In</h1>
+              <form
+                onSubmit={handleSubmit}
+                className="w-full flex flex-col py-4"
+              >
                 <input
+                  onChange={(e) => setEmail(e.target.value)}
                   className="border rounded p-3 my-2 bg-gray-700"
                   type="email"
                   name="email"
@@ -26,6 +49,7 @@ export const Login = () => {
                 />
 
                 <input
+                  onChange={(e) => setPassword(e.target.value)}
                   className="border rounded p-3 my-2 bg-gray-700"
                   type="password"
                   name="password"
@@ -33,8 +57,14 @@ export const Login = () => {
                   placeholder="Password"
                 />
                 <button className="bg-red-600 hover:bg-red-800 px-6 py-3 my-6 rounded cursor-pointer text-white">
-                  Sign Up
+                  Sign In
                 </button>
+                {error && (
+                  <p className="p-3 bg-white text-red-600 py-2 my-2 rounded">
+                    {error}
+                  </p>
+                )}
+
                 <div className="flex justify-between text-center text-md text-gray-500">
                   <p>
                     <input className="mr-2" type="checkbox" />
@@ -43,10 +73,8 @@ export const Login = () => {
                   <p className="">Need help?</p>
                 </div>
                 <p className="py-8">
-                  <span className="text-gray-600">
-                    Already subsrabe to NextFlix?
-                  </span>
-                  <Link to="/login">Sign In</Link>
+                  <span className="text-gray-600">New to NextFlix?</span>
+                  <Link to="/login">Sign Up</Link>
                 </p>
               </form>
             </div>
