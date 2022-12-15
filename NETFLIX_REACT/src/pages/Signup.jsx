@@ -11,11 +11,13 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    setError("")
     try {
       await signUp(email, password)
       navigate("/")
     } catch (error) {
       console.log(error)
+      setError(error.message)
     }
   }
 
