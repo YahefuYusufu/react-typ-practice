@@ -1,6 +1,6 @@
 import React from "react"
 import { FaHeart, FaRegHeart } from "react-icons/fa"
-import { UserAuth } from "../contenxt/authContext"
+import { UserAuth } from "../context/authContext"
 import { db } from "../utils/firebase"
 import { arrayUnion, doc, updateDoc } from "firebase/firestore"
 

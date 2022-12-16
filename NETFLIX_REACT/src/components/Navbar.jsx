@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, useNavigate } from "react-router-dom"
-import { UserAuth } from "../contenxt/authContext"
+import { UserAuth } from "../context/authContext"
 
 const style = {
   container: "flex justify-between items-center p-4 z-[100] w-full absolute",

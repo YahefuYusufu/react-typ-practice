@@ -1,11 +1,11 @@
-import React from "react"
-import { UserAuth } from "../contenxt/authContext"
+import React, { useState } from "react"
+import { UserAuth } from "../context/authContext"
 import { db } from "../utils/firebase"
 import { updateDoc, doc, onSnapshot } from "firebase/firestore"
-import { MdChevronLeft, MdChevronRight } from "react-icons/md"
+import { MdChevronLeft, MdChevronRight, MdClose } from "react-icons/md"
 
 export const SavedShows = () => {
-  const [movies, setMovies] = React.useState([])
+  const [movies, setMovies] = useState([])
   const { user } = UserAuth()
 
   const sliderLeft = () => {
@@ -23,6 +23,18 @@ export const SavedShows = () => {
     })
   }, [user?.email])
 
+  const movieRef = doc(db, "users", `${user?.email}`)
+  const deleteShow = async (passedID) => {
+    try {
+      const result = movies.filter((item) => item.id !== passedID)
+      await updateDoc(movieRef, {
+        savedShows: result,
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <>
       <h2 className="text-white font-bold md:text-xl p-4">My Shows</h2>
@@ -36,9 +48,9 @@ export const SavedShows = () => {
           id={"slider"}
           className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative"
         >
-          {movies.map((item, id) => (
+          {movies.map((item) => (
             <div
-              key={id}
+              key={item.id}
               className="w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-2"
             >
               <img
@@ -49,6 +61,9 @@ export const SavedShows = () => {
               <div className="absolute top-0 left-0 w-full h-full hover:bg-black/70 opacity-0 hover:opacity-100 text-white">
                 <p className="white-space-normal text-xs md:text-sm font-bold flex justify-center items-center h-full text-center">
                   {item?.title}
+                </p>
+                <p className="absolute text-gray-300 hover:bg-gray-500 rounded-3xl top-4  right-4">
+                  <MdClose size={25} onClick={() => deleteShow(item.id)} />
                 </p>
               </div>
             </div>
