@@ -1,11 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-const themeFromLocalStorage = !!localStorage.getItem("movies-theme")
-
 type ThemeState = {
   theme: boolean
   loading: boolean
 }
+
+const themeFromLocalStorage = !!localStorage.getItem("movies-theme")
+
 const initialState: ThemeState = {
   theme: themeFromLocalStorage,
   loading: false,
@@ -24,4 +25,5 @@ export const themeSlice = createSlice({
 })
 
 export const { toggleTheme } = themeSlice.actions
+
 export default themeSlice.reducer

@@ -1,15 +1,12 @@
 import { BsSun, BsFillMoonFill } from "react-icons/bs"
-import { Link, NavLink, Outlet } from "react-router-dom"
+import { Link, Outlet } from "react-router-dom"
 import { useAppSelector, useAppDispatch } from "../../hooks/storeHook"
 import { toggleTheme } from "../../features/theme/themeSlice"
 
 export const Header = () => {
   const { darkTheme } = useAppSelector((state) => state)
   const dispatch = useAppDispatch()
-
-  const toggleHandler = () => {
-    dispatch(toggleTheme())
-  }
+  const toggleHandler = () => dispatch(toggleTheme())
   return (
     <>
       <header className="mb-20">
@@ -24,14 +21,12 @@ export const Header = () => {
             <div className="flex items-center lg:order-2">
               {darkTheme.theme && (
                 <BsSun
-                  size={30}
                   onClick={() => toggleHandler()}
                   className="hover:opacity-50 cursor-pointer"
                 />
               )}
               {!darkTheme.theme && (
                 <BsFillMoonFill
-                  size={30}
                   onClick={() => toggleHandler()}
                   className="hover:opacity-50 cursor-pointer"
                 />
