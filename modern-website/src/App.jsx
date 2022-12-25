@@ -11,7 +11,7 @@ import {
 function App() {
   return (
     <div className="App">
-      <div className="gradient__bg">
+      {/* <div className="gradient__bg">
         <Navbar />
         <Header />
       </div>
@@ -21,7 +21,8 @@ function App() {
       <Possibility />
       <CTA />
       <Blog />
-      <Footer />
+      <Footer /> */}
+      <h1>Hello World</h1>
     </div>
   )
 }
