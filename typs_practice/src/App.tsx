@@ -1,7 +1,9 @@
-import Arrays from "./components/Arrays"
-import Function from "./components/Function"
-import Objects from "./components/Objects"
-import Union from "./components/Union"
+import Arrays from "./basic/Arrays"
+import Function from "./basic/Function"
+import Interface from "./basic/Interface"
+import Objects from "./basic/Objects"
+import TupEnums from "./basic/TupEnums"
+import Union from "./basic/Union"
 
 function App() {
   return (
@@ -10,7 +12,9 @@ function App() {
         {/* <Function /> */}
         {/* <Objects /> */}
         {/* <Arrays /> */}
-        <Union />
+        {/* <Union /> */}
+        {/* <TupEnums /> */}
+        <Interface />
       </div>
     </>
   )
