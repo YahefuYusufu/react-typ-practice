@@ -1,12 +1,15 @@
 import React from "react"
 import { ChevronDoubleLeftIcon, XMarkIcon } from "@heroicons/react/24/solid"
 
-const CartCount = () => {
+const CartCount = ({ onCartToggle }) => {
   return (
     <>
       <div className="bg-white h-11 flex items-center justify-between px-3 sticky top-0 right-0 bottom-0 left-0">
         <div className="flex items-center gap-3">
-          <div className="grid items-center cursor-pointer">
+          <div
+            className="grid items-center cursor-pointer"
+            onClick={onCartToggle}
+          >
             <ChevronDoubleLeftIcon
               size={20}
               className="h-5 w-5 text-slate-900 hover:text-orange-500 stroke-[2]"
