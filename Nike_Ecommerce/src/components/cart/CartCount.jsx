@@ -1,7 +1,7 @@
 import React from "react"
 import { ChevronDoubleLeftIcon, XMarkIcon } from "@heroicons/react/24/solid"
 
-const CartCount = ({ onCartToggle }) => {
+const CartCount = ({ onCartToggle, onClearCartItems, totalQTY }) => {
   return (
     <>
       <div className="bg-white h-11 flex items-center justify-between px-3 sticky top-0 right-0 bottom-0 left-0">
@@ -19,13 +19,14 @@ const CartCount = ({ onCartToggle }) => {
             <h1 className="text-base font-medium text-slate-900">
               Your Cart{" "}
               <span className="bg-theme-cart px-1 py-0.5 text-slate-100 font-normal text-xl">
-                (items)
+                {totalQTY}
               </span>
             </h1>
           </div>
         </div>
         <div className="flex items-center">
           <button
+            onClick={onClearCartItems}
             type="button"
             className="rounded bg-theme-cart active:scale-90 p-0.5"
           >
