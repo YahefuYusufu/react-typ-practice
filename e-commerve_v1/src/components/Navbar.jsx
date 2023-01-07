@@ -20,7 +20,7 @@ const Navbar = () => {
   return (
     <header className={styles.header}>
       <h1 className={styles.h1}>
-        E_ <span className={styles.span}>Commerce</span>
+        سەي <span className={styles.span}>سىچاڭ</span>
       </h1>
       <nav>
         <ul className={styles.ul}>

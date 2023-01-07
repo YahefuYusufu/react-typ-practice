@@ -44,10 +44,11 @@ const Products = () => {
           <h1>$700</h1>
         </div>
         <div className={styles.div}>
-          <img className={styles.img} src="images/shoes.jpg" alt="shoes" />
+          <img className={styles.img} src="images/phone.jpg" alt="shoes" />
           <p>Lorem ipsum dolor sit.</p>
           <h1>$700</h1>
         </div>
+
         <div className={styles.div}>
           <img className={styles.img} src="images/glases.jpg" alt="glasses" />
           <p>Lorem ipsum dolor sit.</p>
@@ -64,7 +65,7 @@ const Products = () => {
           <h1>$700</h1>
         </div>
         <div className={styles.div}>
-          <img className={styles.img} src="images/shoes.jpg" alt="shoes" />
+          <img className={styles.img} src="images/phone.jpg" alt="phone" />
           <p>Lorem ipsum dolor sit.</p>
           <h1>$700</h1>
         </div>
