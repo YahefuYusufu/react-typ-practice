@@ -1,0 +1,6 @@
+export { default as Home } from "./Home"
+export { default as Conventer } from "./Conventer"
+export { default as Modal } from "./Modal"
+export { default as Gallery } from "./Gallery"
+export { default as Quiz } from "./Quiz"
+export { default as UserSearch } from "./UserSearch"

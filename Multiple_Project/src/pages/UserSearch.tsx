@@ -1,5 +1,6 @@
 import React from "react"
 
-export const UserSearch = () => {
+const UserSearch = () => {
   return <div>UserSearch</div>
 }
+export default UserSearch

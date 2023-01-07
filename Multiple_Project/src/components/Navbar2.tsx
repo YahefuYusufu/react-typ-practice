@@ -27,7 +27,7 @@ export const Navbar = () => {
   return (
     <div
       style={{ backgroundColor: `${color}` }}
-      className="fixed left-0 top-0 bg-slate-500 rounded-xl w-full z-10 ease-in duration-300"
+      className="w-/11/12 md:w-5/5 mx-auto fixed bg-black rounded-xl w-full z-10 ease-in duration-300"
     >
       <div className="max-w[1280px]  m-auto flex justify-between items-center p-4 text-black">
         <Link to="/">
