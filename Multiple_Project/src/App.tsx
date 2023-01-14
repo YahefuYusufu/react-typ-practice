@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom"
-import Navbar from "./components/Navbar"
+import Navbar from "./components/Navbar3"
 import { Conventer, Gallery, Home, Modal, Quiz, UserSearch } from "./pages"
 function App() {
   return (

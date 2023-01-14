@@ -7,17 +7,31 @@ html {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 body {
-  background: url("./assets/polygon-scatter-haikei.svg") no-repeat center center
-    fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  margin: 0;
+  padding: 0;
+  background: #f2f2f2;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-sizing: border-box;
 }
-.custom-img {
-  background: url("./assets/Shiny Overlay.svg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+
+:root {
+  --primary-blue: #00d8ff;
+  --primary-purple: #6a00ff;
+}
+
+@layer base {
+  * {
+    @apply font-[Kanit];
+  }
+  h1 {
+    @apply text-4xl font-bold;
+  }
+
+  li {
+    @apply p-4;
+  }
+
+  button {
+    @apply bg-gradient-to-r from-[var(--primary-purple)] to-[var(--primary-blue)] py-3 px-7 rounded-3xl;
+  }
 }

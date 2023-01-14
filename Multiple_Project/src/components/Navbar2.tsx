@@ -4,8 +4,8 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai"
 
 export const Navbar = () => {
   const [nav, setNav] = useState(false)
-  const [color, setColor] = useState("trasparent")
-  const [textColor, setTextColor] = useState("white")
+  const [color, setColor] = useState("#ffffff")
+  const [textColor, setTextColor] = useState("black")
 
   const handeleNav = () => {
     setNav(!nav)
@@ -18,7 +18,7 @@ export const Navbar = () => {
         setTextColor("#000000")
       } else {
         setColor("transparent")
-        setTextColor("#ffffff")
+        setTextColor("#262626")
       }
     }
     window.addEventListener("scroll", changeColor)
@@ -27,7 +27,7 @@ export const Navbar = () => {
   return (
     <div
       style={{ backgroundColor: `${color}` }}
-      className="w-/11/12 md:w-5/5 mx-auto fixed bg-black rounded-xl w-full z-10 ease-in duration-300"
+      className="w-/9/12 md:w-3/5 xl:items-center  fixed bg-transparent rounded-xl w-full z-10 ease-in duration-300"
     >
       <div className="max-w[1280px]  m-auto flex justify-between items-center p-4 text-black">
         <Link to="/">
@@ -67,8 +67,8 @@ export const Navbar = () => {
         <div
           className={
             nav
-              ? "sm:hidden absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-slate-700 test-center ease-in duration-700"
-              : "sm:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-slate-700 test-center ease-in duration-700"
+              ? "sm:hidden absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-slate-900 text-center text-white ease-in duration-700"
+              : "sm:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-slate-700 text-center ease-in duration-700"
           }
         >
           <ul>
