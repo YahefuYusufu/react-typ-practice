@@ -1,0 +1,31 @@
+.animation {
+  height: 100px;
+  width: 100px;
+  background-color: blue;
+  transition: 200ms;
+  position: relative;
+  left: 0;
+}
+
+.animation-1:hover {
+  background-color: red;
+  height: 150px;
+  width: 150px;
+}
+.animation-2 {
+  background-color: green;
+  height: 100px;
+  width: 100px;
+  animation-name: move;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes move {
+  0% {
+    left: 0;
+  }
+  100% {
+    right: 1000px;
+  }
+}
