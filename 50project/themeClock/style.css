@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css?family=Heebo:300&display=swap");
+
+:root {
+  --primary-color: #000;
+  --secondary-color: #fff;
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  transition: all 0.5s ease-in;
+}
+html.dark {
+  --primary-color: #fff;
+  --secondary-color: #333;
+}
+html.dark {
+  background-color: #111;
+  color: var(--primary-color);
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
