@@ -1,6 +1,7 @@
 import Arrays from "./basic/Arrays"
 import Function from "./basic/Function"
 import Interface from "./basic/Interface"
+import Navbar from "./basic/Navbar"
 import Objects from "./basic/Objects"
 import TupEnums from "./basic/TupEnums"
 import Union from "./basic/Union"
@@ -20,7 +21,8 @@ function App() {
         {/* <Interface /> */}
         {/* <Classes /> */}
         {/* <Generics /> */}
-        <Narrowing />
+        {/* <Narrowing /> */}
+        <Navbar />
       </div>
     </>
   )
