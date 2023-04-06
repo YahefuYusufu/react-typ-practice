@@ -1,0 +1,28 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(61, 61, 243);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0 10px;
+  margin: 0;
+  overflow: hidden;
+}
+h2 {
+  margin: 10px 0 20px;
+  text-align: center;
+}
+.container {
+  background-color: #23235b;
+  box-shadow: 0px 2px 10px rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  width: 350px;
+  max-width: 100%;
+}
