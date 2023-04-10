@@ -31,11 +31,11 @@ generateEl.addEventListener("click", () => {
   const hasSymbol = symbolsEl.checked
 
   resultEl.innerText = generatePassword(
-    length,
     hasLower,
     hasUpper,
     hasNumber,
-    hasSymbol
+    hasSymbol,
+    length
   )
 })
 
