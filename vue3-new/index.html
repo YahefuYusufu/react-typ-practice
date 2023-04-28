@@ -12,36 +12,21 @@
 </head>
 
 <body>
-	<nav :class="[`navbar-${theme}`,`bg-${theme}`,'navbar','navbar-expand-lg']">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="#">My Vue</a>
-			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-				<li v-for="(page,index) in pages" class="nav-item" :key="index">
-					<a class="nav-link" :class="{active:activePage == index}" aria-current="page" :href="page.link.url"
-						:title="`This link goes to the ${page.link.text}page`"
-						@click.prevent="activePage=index">{{page.link.text}}</a>
-				</li>
-			</ul>
-			<form class="d-flex">
-				<button class="btn btn-primary" @click.prevent="changeTheme()">
-					Hello
-				</button>
-			</form>
-		</div>
-	</nav>
-	<div id="content" class="container">
-		<h1>{{pages[activePage].pageTitle}}</h1>
-		<p>{{pages[activePage].content}}</p>
-	</div>
+	<navbar :pages="pages" :active-page="activePage" :nav-link-click="(index)=>activePage=index">
+
+	</navbar>
+	<page-viewer :page="pages[activePage]">
+
+	</page-viewer>
+
 
 	<script>
-		Vue.createApp({
+		let app = Vue.createApp({
 
 			data() {
 				return {
 					activePage: 0,
 					useDarkNavbar: false,
-					theme: 'light',
 					pages: [
 						{
 							link: { text: 'Home', url: 'index.html' },
@@ -62,6 +47,45 @@
 					],
 				}
 			},
+
+		});
+		app.component('page-viewer', {
+			props: ['page'],
+			template: `
+		 <div id="content" class="container">
+		     <h1>{{page.pageTitle}}</h1>
+		     <p>{{page.content}}</p>
+	     </div>
+		 `
+		})
+
+		app.component('navbar', {
+			props: ['pages', 'activePage', "navLinkClick"],
+			template:
+				`
+			<nav :class="[\`navbar-\${theme}\`,\`bg-\${theme}\`,'navbar','navbar-expand-lg']">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">My Vue</a>
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				<li v-for="(page,index) in pages" class="nav-item" :key="index">
+					<a class="nav-link" :class="{active:activePage == index}" aria-current="page" :href="page.link.url"
+						:title="\`This link goes to the \${ page.link.text }page\`"
+						@click.prevent="navLinkClick(index)">{{page.link.text}}</a>
+				</li>
+			</ul>
+			<form class="d-flex">
+				<button class="btn btn-primary" @click.prevent="changeTheme()">
+					Hello
+					</button>
+					</form>
+					</div>
+	</nav>
+			`,
+			data() {
+				return {
+					theme: 'dark',
+				}
+			},
 			methods: {
 				changeTheme() {
 					let theme = 'light'
@@ -71,7 +95,11 @@
 					this.theme = theme
 				}
 			}
-		}).mount('body')
+		})
+
+
+
+		app.mount('body')
 	</script>
 </body>
 
